@@ -1,9 +1,24 @@
+import os
+import subprocess
+import sys
+
+# 1. THE AUTO-INSTALLER HACK
+# If pdfplumber is missing, this code will force-install it on the server
+try:
+    import pdfplumber
+    import plotly
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pdfplumber", "plotly"])
+    import pdfplumber
+    import plotly
+
 import streamlit as st
-import pdfplumber
 import re
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
+
+# ... (the rest of your app code below) ...
 
 # 1. UI Configuration
 st.set_page_config(page_title="OS Exam Oracle", page_icon="🔮", layout="wide")
