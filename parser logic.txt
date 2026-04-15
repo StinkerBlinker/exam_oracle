@@ -1,0 +1,6 @@
+LOGIC FOR CREATING PARSER
+
+Opens the PDF
+Loops Through each Page
+Regex to look for marks of questions e.g.m [5 marks]
+

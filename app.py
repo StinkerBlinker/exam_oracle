@@ -1,33 +1,19 @@
-import os
-import subprocess
-import sys
-
-# 1. THE AUTO-INSTALLER HACK
-# If pdfplumber is missing, this code will force-install it on the server
-try:
-    import pdfplumber
-    import plotly
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "pdfplumber", "plotly"])
-    import pdfplumber
-    import plotly
-
 import streamlit as st
+import pdfplumber
 import re
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
-
-# ... (the rest of your app code below) ...
+import google.generativeai as genai
 
 # 1. UI Configuration
 st.set_page_config(page_title="OS Exam Oracle", page_icon="🔮", layout="wide")
 
-st.title("🔮 CS311 Exam Oracle: Neural Predictor")
+st.title("🔮 CS311 Exam Oracle: AI Neural Predictor")
 st.markdown("### The Predictive Engine for Operating Systems")
-st.write("Drag and drop **MULTIPLE** past papers (e.g., 2023, 2024, 2025) to generate the 2026 forecast.")
+st.write("Upload multiple past papers (e.g., 2023, 2024, 2025) to see the trends and get an AI study plan.")
 
-# Notice: accept_multiple_files=True
+# 2. File Uploader
 uploaded_files = st.file_uploader("Upload Exam PDFs", type="pdf", accept_multiple_files=True)
 
 os_topics = ["Deadlock", "Paging", "Synchronization", "Scheduling", "Virtual Memory", "Threads"]
@@ -35,80 +21,90 @@ os_topics = ["Deadlock", "Paging", "Synchronization", "Scheduling", "Virtual Mem
 if uploaded_files:
     st.success(f"{len(uploaded_files)} files secured. Engaging multi-dimensional analysis...")
     
-    # Dictionary to store our timeline: {2023: {Deadlock: 5, Paging: 3}, 2024: {...}}
+    # Storage for timeline data
     timeline_data = {}
+    all_text_combined = "" # For global topic ranking
     
-    with st.spinner("Extracting timelines and calculating vectors..."):
+    with st.spinner("Analyzing papers and calculating vectors..."):
         for file in uploaded_files:
-            # Extract the year from the filename (e.g., looks for "2023", "2024")
+            # Extract Year from filename
             year_match = re.search(r'(20\d{2})', file.name)
-            if not year_match:
-                st.warning(f"Could not find a year in filename: {file.name}. Please rename it like 'CS311_2024.pdf'")
-                continue
-                
-            year = int(year_match.group(1))
+            year = int(year_match.group(1)) if year_match else 2025
             
-            # Extract text
+            # Extract Text
             with pdfplumber.open(file) as pdf:
-                full_text = ""
-                for i, page in enumerate(pdf.pages):
-                    if i != 0: # Skip cover
-                        text = page.extract_text()
-                        if text: full_text += text + "\n"
+                page_text = ""
+                for page in pdf.pages:
+                    extracted = page.extract_text()
+                    if extracted: page_text += extracted + "\n"
+                all_text_combined += page_text
             
-            # Count topics
-            text_lower = full_text.lower()
-            topic_counts = {}
-            for topic in os_topics:
-                count = len(re.findall(r'\b' + topic.lower() + r'\b', text_lower))
-                topic_counts[topic] = count
-                
+            # Count topics for this specific year
+            text_lower = page_text.lower()
+            topic_counts = {topic: len(re.findall(r'\b' + topic.lower() + r'\b', text_lower)) for topic in os_topics}
             timeline_data[year] = topic_counts
             
-    # --- The Math & Prediction Engine ---
-    if timeline_data:
+    # 3. Create Rankings (for the AI Tutor)
+    total_counts = {topic: len(re.findall(r'\b' + topic.lower() + r'\b', all_text_combined.lower())) for topic in os_topics}
+    df_rank = pd.DataFrame(list(total_counts.items()), columns=['Topic', 'Mentions']).sort_values(by="Mentions", ascending=False)
+
+    # 4. Visualization (Plotly Line Chart)
+    if len(timeline_data) > 0:
         st.subheader("📈 2026 Predictive Forecast")
-        
-        # Sort the years chronologically
         years_recorded = sorted(list(timeline_data.keys()))
         future_year = years_recorded[-1] + 1
-        plot_years = years_recorded + [future_year]
         
-        # Create a beautiful interactive Plotly chart
         fig = go.Figure()
-        
         for topic in os_topics:
-            # Get the historical data for this topic
             y_values = [timeline_data[y][topic] for y in years_recorded]
+            # Historical Line
+            fig.add_trace(go.Scatter(x=years_recorded, y=y_values, mode='lines+markers', name=f'{topic} (Actual)'))
             
-            # Draw the historical line
-            fig.add_trace(go.Scatter(
-                x=years_recorded, y=y_values, 
-                mode='lines+markers', name=f'{topic} (Actual)',
-                line=dict(width=2)
-            ))
-            
-            # Do the Linear Regression Math (if we have at least 2 years of data)
+            # Linear Regression for Prediction
             if len(years_recorded) >= 2:
                 m, c = np.polyfit(years_recorded, y_values, 1)
-                future_prediction = m * future_year + c
-                
-                # Draw the dashed prediction line to 2026
+                future_val = max(0, m * future_year + c) # Don't predict negative marks
                 fig.add_trace(go.Scatter(
                     x=[years_recorded[-1], future_year], 
-                    y=[y_values[-1], future_prediction],
+                    y=[y_values[-1], future_val],
                     mode='lines+markers', name=f'{topic} (Predicted)',
-                    line=dict(dash='dash', width=2),
-                    showlegend=False # Keep the legend clean
+                    line=dict(dash='dash')
                 ))
-        
-        fig.update_layout(
-            title="Topic Mentions Over Time vs. Future Projection",
-            xaxis_title="Year",
-            yaxis_title="Mentions / Weight",
-            xaxis=dict(tickmode='linear', dtick=1),
-            template="plotly_dark",
-            height=600
-        )
-        
+
+        fig.update_layout(template="plotly_dark", height=500, xaxis=dict(tickmode='linear', dtick=1))
         st.plotly_chart(fig, use_container_width=True)
+
+    # 5. AI TUTOR SECTION (The Agentic Move)
+    st.divider()
+    st.subheader("🤖 AI Study Tutor: 2026 Strategy")
+    st.write("Click below to have the Oracle's brain generate a custom study plan based on these trends.")
+    
+    if st.button("Generate My 14-Day Study Plan"):
+        # Access secrets from Streamlit Cloud
+        if "GEMINI_API_KEY" in st.secrets:
+            genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+            model = genai.GenerativeModel('gemini-1.5-flash')
+            
+            top_topic = df_rank.iloc[0]['Topic']
+            
+            prompt = f"""
+            I am a student studying Operating Systems (CS311). 
+            Based on my past exam analysis, the most frequent topic is '{top_topic}'.
+            The overall topics being tested are: {', '.join(os_topics)}.
+            
+            Please generate a high-intensity 14-day study schedule that prioritizes 
+            '{top_topic}' but ensures I cover the others. Use a professional, 
+            encouraging tone and format it with bold headings and bullet points.
+            """
+            
+            with st.spinner("Consulting the Oracle's Brain..."):
+                try:
+                    response = model.generate_content(prompt)
+                    st.markdown(response.text)
+                except Exception as e:
+                    st.error(f"AI Error: {e}")
+        else:
+            st.error("Missing Gemini API Key! Please add it to your Streamlit Secrets.")
+
+else:
+    st.info("Awaiting PDF uploads to initiate neural scan...")
