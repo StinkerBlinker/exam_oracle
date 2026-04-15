@@ -1,0 +1,22 @@
+1:System calls and OS components
+2: Process states & Lifecycles
+3:RAID configurations
+4:Process Synchronization
+5:Multithreading Models
+6:Deadlocks
+7:Disk Scheduling
+8:Memory Management
+9: Page replacement algorithms
+10;Contigous Memory allocations
+
+
+import numpy as np
+
+# Each list is a year: [Topic 1, Topic 2, ..., Topic 10]
+data = np.array([
+    [10, 4, 4, 6, 4, 8, 10, 10, 6, 4], # 2023
+    [12, 4, 4, 4, 4, 10, 10, 8, 6, 4], # 2024
+    [10, 4, 4, 4, 4, 10, 10, 10, 6, 4] # 2025
+])
+
+print("Oracle Matrix Shape:", data.shape)

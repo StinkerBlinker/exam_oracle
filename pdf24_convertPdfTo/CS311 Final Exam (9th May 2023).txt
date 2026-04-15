@@ -1,0 +1,633 @@
+﻿CS311 Operating System 
+School of Information Technology, Engineering, Mathematics and Physics 
+
+ 
+
+Final Examination 
+Semester 1 2023 
+
+ 
+
+F2F 
+ 
+
+ 
+
+Duration of Exam: 3 hours + 10 minutes 
+
+Reading Time: 10 minutes 
+
+Writing Time: 3 hours 
+
+ 
+
+ 
+
+Total marks: 100 
+
+ 
+
+Instructions: 
+
+1. This exam has 23 questions and ALL are compulsory. 
+2. There are 12 pages in this paper including this cover page. 
+3. Start each question on a new page in your answer booklet. 
+4. Show all necessary working. Partial marks will be awarded for partially correct 
+
+answers. 
+5. Only non-programmable calculators are allowed. 
+6. This exam is worth 45 % of your overall mark.  
+7. The minimum passing mark is 40/100. 
+ 
+
+ 
+
+ 
+Student ID:  _________________________________ 
+
+  
+Student Name: _________________________________ 
+
+
+
+1. What Interface is used by the Operating System to interact with application programs for 
+providing services such as audit logs and security. How is this interface different from 
+interacting with the Users?        [2 Marks] 
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________ 
+ 
+
+2. Compare and contrast between a Monolithic, Modular and Layered structure of Operating 
+System design. Discuss in terms of layers, speed, security, debugging and updates.  
+
+[3 Marks] 
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________ 
+ 
+
+3. What is the difference between a zombie process and an orphan process? Give an example of 
+how each can occur in a Unix-based operating system?     [3 Marks] 
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________ 
+ 
+
+4. Explain the relationship between Context Switching and Dispatch Latency. What are two 
+trigger points of a Context Switch?       [2 Marks] 
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________ 
+
+  
+
+Page 2 of 12 
+ 
+
+
+
+5. In memory management, two different types of fragmentation can occur, namely internal 
+fragmentation and external fragmentation. Explain the differences between these two types of 
+fragmentation. Which one is solved by the use of fixed-size page frames?  [3 Marks] 
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________ 
+___________________________________________________________________________
+__________________________________________________________________________ 
+ 
+
+6. Determine which of the three techniques (spooling, buffering and caching) can be used in the 
+
+following I/O scenarios.        [3 marks] 
+
+A. Printing work is placed in the temporary area so that the printer can access in the order it 
+
+was sent. 
+
+ 
+
+ 
+
+B. Watching a video online. 
+
+ 
+
+ 
+
+C. Web page provides your details when you visit second time. 
+
+ 
+
+ 
+
+  
+
+Page 3 of 12 
+ 
+
+
+
+7. Given a disk schedule with a queue 0 – 100 tracks, where track requests are received in the 
+following order 50, 65, 35, 60 ,55, 90, 95. The starting position for the arm is track 40. 
+Calculate the number of tracks crossed when the following algorithms are used: 
+
+A. SSTF          [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________ 
+
+ 
+B. C-LOOK         [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________ 
+
+Page 4 of 12 
+ 
+
+
+
+8. The following are ready to be scheduled on a single CPU system and decisions are to be 
+made based upon the processes at the time of queue. (RR Quantum is 3) 
+
+ Burst Arrival 
+Process Priority 
+
+Time (ms) Time (ms) 
+ 
+
+P1 10 2.5 2 
+
+ P2 4 0.0 1 
+
+P3 3 1.5 3 
+ 
+
+P4 7 8.5 2 
+ 
+
+A. Assume the CPU is left idle for the first 2 milliseconds and then Non-Preemptive Shortest 
+Job First algorithm is used. Draw the Gantt Chart & Calculate the Average Completion 
+Time.           [3 Marks] 
+
+ 
+ 
+ 
+ 
+ 
+
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________ 
+
+ 
+B. Draw the Gantt Chart for the Preemptive Priority Scheduling & Calculate the Average 
+
+Completion Time.        [3 Marks] 
+
+ 
+ 
+ 
+ 
+ 
+
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________ 
+
+ 
+C. Discuss the criteria for choosing the optimal scheduling algorithm?  [2 Marks] 
+
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________ 
+
+Page 5 of 12 
+ 
+
+
+
+9. Consider the following information about resources and processes in the system. There are 
+four processes (P1, P2, P3, P4) and four resources (R1, R2, R3, R4). R4 & R1 have two 
+instances. Other resources have one instance each. 
+
+ P1 has once instance of R1 and wants one instance of R4.  
+
+ P2 has one instance of R2 and wants one instance of R3  
+
+ P3 has one instance of R3 and wants one instance of R1.  
+
+ P4 has one instance of R1 and one instance of R4. 
+
+ P4 wants one instance of R1.      [5 Marks] 
+
+Draw the Resource Allocation Graph & determine if this is a deadlock state or a safe state? 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________ 
+
+10. What is the role of a load balancer and the effects of a push & pull migration in a multiple 
+processor scheduling?        [2 Marks] 
+
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________ 
+
+Page 6 of 12 
+ 
+
+
+
+11. There is a 23-bit virtual address and a 15-bit physical address in an operating system. The 
+
+page size is 4KB. 
+
+A. How many entries are there in a conventional single level page table? [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+B. How many entries are there in an inverted page table?   [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+C. What is the total size of the logical address space?    [1 Mark] 
+
+ 
+
+ 
+
+ 
+
+12. Given three memory partitions of 500 KB, 350 KB, 100 KB (in order), how would the first-
+
+fit, best-fit, and worst-fit algorithms place processes of size 200 KB, 220 KB and 300 KB (in 
+
+order)?          [6 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 7 of 12 
+ 
+
+
+
+13. Consider the following system state. There are three resources and three processes. 
+
+Available: 
+R1 R2 R3 R4 
+2    1    2    1 
+Claim Matrix:   Allocation Matrix: 
+
+ R1 R2 R3 R4  R1 R2 R3 R4 
+
+P1 2    1    2    1  1    0    1    0 
+
+P2 3    2    4    1  0    0    1    1 
+
+P3 4    2    1    3  1    1    1    2 
+
+A. Compute the Need Matrix.              [2 Marks] 
+
+ 
+
+ 
+
+B. Determine whether the system is in a safe state or not? Use Bankers Algorithm [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+C. Can resource (2 2 6 0), (2 2 1 1) & (1 0 1 0) be granted by P2?         [5 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 8 of 12 
+ 
+
+
+
+14. Assuming a 1-KB page size, what are the page numbers and offsets for the following address 
+
+references (provided as decimal numbers)? 
+
+A. 31305          [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+B. 165250          [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+15. Consider a logical address space of sixteen pages of 512 words each mapped, mapped onto a 
+
+physical memory of 64 frames. 
+
+A. How many bits are required in the logical address?    [2 Marks] 
+
+ 
+
+ 
+
+B. How many bits are required in the physical address?    [2 Marks] 
+
+ 
+
+ 
+
+16. Suppose we are operating with execution-time binding and the physical address generated is 
+
+450. The relocation register is set to 120. What is the corresponding logical address? 
+
+ [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+Page 9 of 12 
+ 
+
+
+
+17. For the page references given below, answer the questions that follow. Assume there are five 
+
+frames: 
+
+A, B, C, D, X, Y, Z, B, E, C, G, D, A, G, D, B, E, C 
+
+A. How many page faults will occur if optimal page replacement algorithm is used?  
+
+[3 Marks] 
+
+ 
+
+  
+
+ 
+
+B. How many page faults will occur if LRU page replacement algorithm is used? [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+18. Using the buddy system, allocate memory for 512KB chunk available and the kernel requests 
+
+15KB.           [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+19. Identify and explain the three essential rules that any critical section solution must follow? 
+
+[3 Marks] 
+
+____________________________________________________________________________
+
+____________________________________________________________________________
+
+____________________________________________________________________________
+
+____________________________________________________________________________
+
+____________________________________________________________________________ 
+
+Page 10 of 12 
+ 
+
+
+
+20. Belady’s Anomaly is the name given to the phenomenon where increasing the number of 
+
+page frames results in an increase in the number of page faults for a given memory access 
+
+pattern. In FIFO Replacement, sometimes this is evident however this is not always the case.  
+
+A. Using the following string reference, apply FIFO Replacement & calculate the page faults 
+
+if the frames are 3, 4 & 5.       [6 Marks] 
+
+1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+B. Draw a Diagram showing the FIFO Replacement and clearly indicate Belady’s Anomaly. 
+
+(If applicable)         [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 11 of 12 
+ 
+
+
+
+21. Why do we need a Hot Standby equipment & RAID Technology for a Server Environment? 
+
+How is Raid 0 different from Raid 1?      [4 Marks] 
+
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+_____________________________________________________________________________________ 
+ 
+22. Write the LINUX Commands for the following tasks: 
+
+A. Use echo to display the result of 5.8+7.9+4.5 to a text file called Final.txt  [2 Marks] 
+
+ 
+
+B. Create a file using touch command called Calendar.txt & display the Month of November 
+
+2023 in the file Calendar.txt       [2 Marks] 
+
+ 
+
+C. Display 1 to 50 in patterns of 3 to a text file called Patterns.txt  [2 Marks] 
+
+ 
+
+23. Networks suffer from hardware failure, malicious infection through denial-of-service attacks, 
+insider threats, disclosure of information to unauthorised personnel and other vulnerabilities 
+such as data loss and ransomware attacks. Mention at least three network security 
+mechanisms you would implement to overcome these issues?   [3 Marks] 
+
+______________________________________________________________________________
+
+______________________________________________________________________________
+
+______________________________________________________________________________
+
+______________________________________________________________________________
+
+______________________________________________________________________________
+
+______________________________________________________________________________
+
+______________________________________________________________________________ 
+
+THE END 
+
+Page 12 of 12

@@ -1,0 +1,803 @@
+﻿CS311 Operating System 
+School of Information Technology, Engineering, Mathematics and Physics 
+
+ 
+
+Final Examination 
+Semester 1 2024 
+
+ 
+
+F2F 
+ 
+
+ 
+
+Duration of Exam: 3 hours + 10 minutes 
+
+Reading Time: 10 minutes 
+
+Writing Time: 3 hours 
+
+ 
+
+ 
+
+Total marks: 100 
+
+ 
+
+Instructions: 
+
+1. This exam has 10 questions and ALL are compulsory. 
+2. There are 15 pages in this paper including this cover page. 
+3. Write your answers directly in the space provided. 
+4. Show all necessary working. Partial marks will be awarded for partially correct 
+
+answers. 
+5. Only non-programmable calculators are allowed. 
+6. This exam is worth 45 % of your overall mark.  
+7. The minimum passing mark is 40/100. 
+ 
+
+ 
+
+ 
+Student ID:  _________________________________ 
+
+  
+Student Name: _________________________________ 
+
+
+
+Question 1          8 Marks 
+
+A. An operating system interacts with different interfaces such as CLI, API, GUI and system calls. 
+Discuss the significance of each of these interfaces commonly used in operating systems.  
+
+[3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+B. Compare and contrast between Modular and DOS structure of Operating System design. 
+Include benefits, challenges and examples of operating systems where these designs are best 
+suited.           [3 Marks] 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+C. Explain the role of kernels in operating systems with the aid of a diagram.  [2 Marks] 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Page 2 of 15 
+ 
+
+
+
+Question 2          12 Marks 
+
+A. Given a disk schedule with a queue 0 – 199 tracks, where track requests are received in the 
+following order 27, 129, 110, 186, 147, 41, 10, 64, 120. The starting position for the arm is 
+track 100 and is moving in the direction of decreasing track number. Evaluate the use of FCFS, 
+SSTF and elevator disk scheduling algorithms and recommend the optimal solution. Use 
+diagrams, calculations and critical analysis to support your answer.   [7 Marks] 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Page 3 of 15 
+ 
+
+
+
+B. Suppose there are two x 1 Terabytes hard drives used for Stripping, Mirroring and Raid 10 
+configurations. Provide a detailed analysis by performing the following: 
+
+i. Assess the disk usage capacity and calculate the storage values for each. [2 Marks] 
+ii. Indicate the options for redundancy (if applicable).    [1 Mark] 
+
+iii. For a given business environment with 10 employees, which backup options would you 
+recommend. Justify your answers.      [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 4 of 15 
+ 
+
+
+
+Question 3          15 Marks 
+
+A. Consider a system with the following set of processes: 
+
+Process Arrival Time Burst Time Priority 
+ID (ms) (ms) ID 
+P1 0 6 3 
+P2 1 4 1 
+P3 2 2 4 
+P4 3 8 2 
+P5 4 3 5 
+
+For each process scheduling algorithm, draw a Gantt chart and calculate the average waiting time 
+for the processes.         [10 Marks] 
+
+i. Pre-emptive Shortest Job First (SJF). 
+ii. Pre-emptive Round Robin with time quantum of 4. 
+
+iii. Non-preemptive Priority Scheduling. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 5 of 15 
+ 
+
+
+
+B. Assume the CPU is left idle for the first 2 milliseconds and then Non-Preemptive Shortest Job 
+First algorithm is used, compute the average turnaround time and discuss why non-preemptive 
+shortest job first algorithm may not be applicable to real world scenarios.  [5 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 6 of 15 
+ 
+
+
+
+Question 4          15 Marks 
+
+A. A system has four processes (P1, P2, P3, P4) and three types of dedicated resources (R1, R2, 
+R3). The existence vector is E = (3,2,3) 
+
+• P1 holds one instance of R1 and wants one instance of R2.  
+
+• P2 holds two instances of R2 and wants one instance of R3 and an instance of R1. 
+
+• P3 holds one instance of R3 and wants one instance of R2.  
+
+• P4 has one instance of R1 and one instance of R3. 
+
+i. Compute the Availability Matrix.      [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ii. Draw the Resource Allocation Graph & determine if the system is in a deadlock state or a 
+
+safe state? Justify your answer.       [6 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 7 of 15 
+ 
+
+
+
+iii. Assume Process P4 also wants an instance of R2. Will the system be deadlocked? Explain 
+
+your answer.         [7 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 8 of 15 
+ 
+
+
+
+Question 5          10 Marks 
+
+Consider the following snapshot of a system. 
+
+ Max Allocation Available 
+
+ A B C A B C A B C 
+P1 0 0 1 0 0 1  
+P2 1 8 5 1 0 0  
+
+P3 2 4 5 1 3 5  
+P4 0 7 5 0 6 4  
+
+Total  2 9 10 1 5 2 
+
+A. Compute the total number of resources of type (A B C) and determine if the system is safe. 
+
+Use Bankers algorithm to justify your answer.     [5 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+B. If a request from process P2 arrives for additional resources of (0,5,2) can the request be 
+
+granted?           [5 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 9 of 15 
+ 
+
+
+
+Question 6          10 Marks 
+
+A. A paging system has a 20-bit virtual address and a 13-bit physical address in an operating 
+
+system. The page size is 4KB. 
+
+i. Compute the number of entries in an inverted page table.   [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ii. Compute the number of bits required for a logical address.   [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+iii. Compute the total size generated by the MMU.    [2 Marks] 
+
+ 
+
+ 
+
+B. Consider a logical address space of 128 pages of 512 words each, mapped onto a physical 
+
+memory of 16 frames. Compute the number of bits in the logical address? [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 10 of 15 
+ 
+
+
+
+Question 7          5 Marks 
+
+A. In a system with four processes (P1 – 25 KB, P2- 40 KB, P3 – 15 KB, P4 – 35 KB) and 
+
+available memory blocks (50 KB, 30 KB, 80 KB, 20 KB) in order:  [3 Marks]  
+
+i. Apply First Fit and Worst Fit to allocate memory to each process. Analyze the results and 
+
+recommend the algorithm that is best suited to reduce external fragmentation.  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+B. Using the buddy system, allocate memory for 256 KB chunk available and the kernel 
+
+requests 17 KB.          [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 11 of 15 
+ 
+
+
+
+Question 8          10 Marks 
+
+A. For the following page reference given as: [8, 0, 1, 2, 1, 2 ,3, 8, 4, 5, 3, 2, 8] with four 
+
+frames, determine the number of page faults using LRU and Optimal page replacement 
+
+algorithms.         [5 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+B. Illustrate how process synchronization works using a semaphore with the aid of a diagram.  
+
+[ 5 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 12 of 15 
+ 
+
+
+
+Question 9          5 Marks 
+
+A. Explain the concept of mutex in a critical section problem? Also outline and explain two 
+
+other requirements necessary to solve the critical section problem.?  [2 Marks] 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+B. Consider the following scenarios, each representing a potential attack on computer security: 
+
+i. Network snooping 
+ii. A distributed denial of service (DDoS) attack 
+
+iii. Altering financial transaction records in a banking system: 
+
+For each scenario, explain the security concept and identify the relevant protection goals that the 
+attacks are targeted to exploit in computer security. List any remediation strategies that could be 
+used to mitigate the risks associated with each type of attack.   [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 13 of 15 
+ 
+
+
+
+Question 10          10 Marks 
+
+Case Study: A web server application is running on a Unix-based operating system. The web 
+server spawns multiple child processes to handle incoming HTTP requests from clients. Each 
+child process handles a specific request and terminates once the request is processed. 
+
+i. Describe a scenario from the case study where a zombie process is likely to occur. Explain 
+why the terminated process becomes a zombie and discuss its implications on system 
+performance.          [3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ii. Describe the conditions under which a process becomes an orphan and discuss the role of the 
+init process in managing orphan processes.     [ 2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Page 14 of 15 
+ 
+
+
+
+iii. Identify potential signs of starvation in the web server's process management. Discuss how a 
+buildup of zombie processes can contribute to starvation and its impact on system resources. 
+
+[3 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+iv. Provide an example from the case study where a race condition might occur in the web 
+server's operation.         [2 Marks] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+THE END 
+
+Page 15 of 15
